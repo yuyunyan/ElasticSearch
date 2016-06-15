@@ -22,7 +22,7 @@ namespace Sabio.Web.Services.Index
                     SecretKey = ConfigService.ESSecretKey,
                     Region = ConfigService.ESRegion,
                 });
-                var pool = new SingleNodeConnectionPool(new Uri(ConfigService.ESurl));
+                var pool = new SingleNodeConnectionPool(new Uri(ConfigService.ESurl)); //NOTE the port for url is 443 
                 var config = new ConnectionSettings(pool, httpConnection);
                 this._Client  = new ElasticClient(config);
             }
